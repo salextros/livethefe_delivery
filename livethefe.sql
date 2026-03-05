@@ -93,10 +93,10 @@ INSERT INTO `tbl_comentarios` (`ID`, `nombre`, `correo`, `mensaje`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `tbl_menu`
+-- Estructura de tabla para la tabla `tbl_productos`
 --
 
-CREATE TABLE `tbl_menu` (
+CREATE TABLE `tbl_productos` (
   `ID` int(11) NOT NULL,
   `nombre` varchar(255) NOT NULL,
   `ingredientes` varchar(255) NOT NULL,
@@ -105,10 +105,10 @@ CREATE TABLE `tbl_menu` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `tbl_menu`
+-- Volcado de datos para la tabla `tbl_productos`
 --
 
-INSERT INTO `tbl_menu` (`ID`, `nombre`, `ingredientes`, `foto`, `precio`) VALUES
+INSERT INTO `tbl_productos` (`ID`, `nombre`, `ingredientes`, `foto`, `precio`) VALUES
 (15, 'JABÓN CANNABIS', 'Aceite de cannabis (CBD), aceite de coco, aceite de oliva, glicerina vegetal, agua destilada, sosa cáustica (hidróxido de sodio), aceites esenciales (lavanda, menta, eucalipto, etc.), colorantes naturales (arcillas, cúrcuma, carbón activado).', '1772034108_JABON_CANNABIS.png', '$35000'),
 (16, 'POMADA CANNABIS', 'Aceite de cannabis (CBD), cera de abejas, aceite de coco, manteca de karité, aceite de oliva, aceites esenciales (menta, lavanda, eucalipto, etc.).', '1772034250_POMADA.png', '$45000'),
 (17, 'ENSECIA CANNABIS', 'Aceite esencial de cannabis, aceite portador (coco fraccionado, almendra, jojoba), alcohol etílico (opcional para fijar aroma), agua destilada, aceites esenciales complementarios (lavanda, menta, eucalipto, etc.).', '1772034369_ENSENCIA_2.png', '$55000'),
@@ -178,9 +178,9 @@ ALTER TABLE `tbl_comentarios`
   ADD PRIMARY KEY (`ID`);
 
 --
--- Indices de la tabla `tbl_menu`
+-- Indices de la tabla `tbl_productos`
 --
-ALTER TABLE `tbl_menu`
+ALTER TABLE `tbl_productos`
   ADD PRIMARY KEY (`ID`);
 
 --
@@ -218,9 +218,9 @@ ALTER TABLE `tbl_comentarios`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
--- AUTO_INCREMENT de la tabla `tbl_menu`
+-- AUTO_INCREMENT de la tabla `tbl_productos`
 --
-ALTER TABLE `tbl_menu`
+ALTER TABLE `tbl_productos`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --

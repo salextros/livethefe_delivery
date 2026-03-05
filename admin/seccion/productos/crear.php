@@ -7,7 +7,7 @@ if($_POST){
     $ingredientes = (isset($_POST["ingredientes"])) ?$_POST["ingredientes"]:"";
     $precio = (isset($_POST["precio"])) ?$_POST["precio"]:"";
 
-    $sentencia=$conexion->prepare("INSERT INTO `tbl_menu` (`ID`, `nombre`, `ingredientes`, `foto`, `precio`) VALUES (NULL, :nombre,:ingredientes,:foto,:precio);");
+    $sentencia=$conexion->prepare("INSERT INTO `tbl_productos` (`ID`, `nombre`, `ingredientes`, `foto`, `precio`) VALUES (NULL, :nombre,:ingredientes,:foto,:precio);");
 
     $foto = (isset($_FILES["foto"]["name"])) ?$_FILES["foto"]["name"]:"";
     $fecha_foto = new DateTime();

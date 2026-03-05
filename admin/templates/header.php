@@ -2,8 +2,8 @@
 
 session_start();
 
-$url_sitio = "http://localhost/homework_sena/thelivefe_1/";
-$url_base = "http://localhost/homework_sena/thelivefe_1/admin/";
+$url_sitio = "http://localhost/homework_sena/livethefe_1/";
+$url_base = "http://localhost/homework_sena/livethefe_1/admin/";
 
 if (!isset($_SESSION['usuario'])) {
     header("Location: " . $url_base . "login.php");

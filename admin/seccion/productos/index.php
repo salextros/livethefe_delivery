@@ -6,7 +6,7 @@ if(isset($_GET["txtID"])){
     $txtID=(isset($_GET["txtID"])?$_GET["txtID"]:"");
 
      //Proceso de borrado que busque la imagen y la pueda borrar
-    $sentencia=$conexion->prepare("SELECT * FROM `tbl_menu`WHERE ID=:id");
+    $sentencia=$conexion->prepare("SELECT * FROM `tbl_productos`WHERE ID=:id");
     $sentencia->bindParam(":id",$txtID);
     $sentencia->execute();
 
@@ -18,7 +18,7 @@ if(isset($_GET["txtID"])){
             }
         }
     //Borrado del registro en la base de datos
-    $sentencia=$conexion->prepare("DELETE FROM `tbl_menu` WHERE ID=:id");
+    $sentencia=$conexion->prepare("DELETE FROM `tbl_productos` WHERE ID=:id");
     $sentencia->bindParam(":id",$txtID);
     $sentencia->execute();
 
@@ -27,7 +27,7 @@ if(isset($_GET["txtID"])){
 
 
 
-$sentencia=$conexion->prepare("SELECT * FROM  `tbl_menu`");
+$sentencia=$conexion->prepare("SELECT * FROM  `tbl_productos`");
 $sentencia->execute();
 $lista_menu = $sentencia->fetchAll(PDO::FETCH_ASSOC);
 

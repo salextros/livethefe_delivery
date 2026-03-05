@@ -13,7 +13,7 @@ $sentencia = $conexion->prepare("SELECT * FROM tbl_testimonios ORDER BY id DESC 
 $sentencia->execute();
 $lista_testimonios = $sentencia->fetchAll(PDO::FETCH_ASSOC);
 
-$sentencia = $conexion->prepare("SELECT * FROM tbl_menu ORDER BY id DESC limit 4 ");
+$sentencia = $conexion->prepare("SELECT * FROM tbl_productos ORDER BY id DESC limit 4 ");
 $sentencia->execute();
 $lista_menu = $sentencia->fetchAll(PDO::FETCH_ASSOC);
 

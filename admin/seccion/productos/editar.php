@@ -9,7 +9,7 @@ if ($_POST) {
     $ingredientes = (isset($_POST["ingredientes"])) ? $_POST["ingredientes"] : "";
     $precio = (isset($_POST["precio"])) ? $_POST["precio"] : "";
 
-    $sentencia=$conexion->prepare(" UPDATE `tbl_menu` SET 
+    $sentencia=$conexion->prepare(" UPDATE `tbl_productos` SET 
             nombre=:nombre, 
             ingredientes=:ingredientes,
             precio=:precio
@@ -31,7 +31,7 @@ if ($_POST) {
             $nombre_foto = $fecha_foto ->getTimestamp()."_".$foto;
             move_uploaded_file($tmp_foto,"../../../images/menu/".$nombre_foto);
 
-            $sentencia=$conexion->prepare("SELECT * FROM `tbl_menu`WHERE ID=:id");
+            $sentencia=$conexion->prepare("SELECT * FROM `tbl_productos`WHERE ID=:id");
             $sentencia->bindParam(":id",$txtID);
             $sentencia->execute();
 
@@ -42,7 +42,7 @@ if ($_POST) {
                         unlink("../../../images/menu/".$registro_foto["foto"]);
                     }
                 }
-        $sentencia=$conexion->prepare(" UPDATE `tbl_menu` 
+        $sentencia=$conexion->prepare(" UPDATE `tbl_productos` 
             SET 
             foto =:foto 
             WHERE ID=:id");
@@ -58,7 +58,7 @@ if ($_POST) {
 
 if(isset($_GET['txtID'])){
     $txtID=(isset($_GET['txtID']))?$_GET['txtID']:"";
-    $sentencia=$conexion->prepare("SELECT * FROM tbl_menu WHERE id=:id");
+    $sentencia=$conexion->prepare("SELECT * FROM tbl_productos WHERE id=:id");
     $sentencia->bindParam(":id",$txtID);
     $sentencia->execute();
     $registro=$sentencia->fetch(PDO::FETCH_LAZY);
